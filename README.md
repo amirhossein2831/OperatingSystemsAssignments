@@ -22,8 +22,8 @@ Each assignment folder includes:
 
 ## Contact Information
 For any questions or clarifications, please reach out to:
-- **Professor Zarandy:** [email@example.com]
-- **TA KeyKhah:** [email@example.com]
+- **Professor Zarandy:** [Zarandi_h@aut.ac.ir]
+- **TA KeyKhah:** [Keikha@aut.ac.ir]
 
 ## Grading Policy
 Please refer to the course syllabus for information on grading criteria and deadlines.
