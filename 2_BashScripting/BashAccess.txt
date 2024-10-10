@@ -1,0 +1,21 @@
+Bash, as a shell, is an interface between the user and the operating system 
+(OS). It allows users to run commands, manage processes, and interact with 
+the file system. However, the access and permission that Bash has depend on 
+the user privileges under which it is executed, rather than Bash itself having
+inherent permissions.
+
+User Permissions Define Access: Bash inherits the permissions and capabilities of  
+the user who runs it. If you're logged in as a regular user, your Bash session will 
+have the same restrictions and access that your user account has. If you're logged in 
+as root (the superuser), Bash will have full access to the system.
+
+    Root User: The root user has unrestricted access to all files and commands on the system. Running Bash as root allows you to:
+        Modify system files (e.g., /etc/passwd, system configurations).
+        Install or uninstall software.
+        Start or stop system services.
+        Manage users and permissions.
+    Regular User: A regular user’s Bash session will have limited access to system files. You can:
+        Access files you own.
+        Run processes you have permission for.
+        Execute programs and scripts with the necessary permissions.
+        Modify files in your home directory.
