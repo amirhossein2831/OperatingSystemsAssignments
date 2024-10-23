@@ -1,0 +1,1 @@
+cmd_/home/mem/Os/process_info_module/process_info.ko := ld -r -m elf_x86_64 -z max-page-size=0x200000 -z noexecstack  -T ./scripts/module-common.lds --build-id  -o /home/mem/Os/process_info_module/process_info.ko /home/mem/Os/process_info_module/process_info.o /home/mem/Os/process_info_module/process_info.mod.o ;  true

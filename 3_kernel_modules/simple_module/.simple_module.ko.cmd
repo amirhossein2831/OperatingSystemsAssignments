@@ -1,0 +1,1 @@
+cmd_/home/mem/Os/simple_module/simple_module.ko := ld -r -m elf_x86_64 -z max-page-size=0x200000 -z noexecstack  -T ./scripts/module-common.lds --build-id  -o /home/mem/Os/simple_module/simple_module.ko /home/mem/Os/simple_module/simple_module.o /home/mem/Os/simple_module/simple_module.mod.o ;  true

@@ -1,0 +1,1 @@
+cmd_/home/mem/Os/hashtable/hashtable.ko := ld -r -m elf_x86_64 -z max-page-size=0x200000 -z noexecstack  -T ./scripts/module-common.lds --build-id  -o /home/mem/Os/hashtable/hashtable.ko /home/mem/Os/hashtable/hashtable.o /home/mem/Os/hashtable/hashtable.mod.o ;  true

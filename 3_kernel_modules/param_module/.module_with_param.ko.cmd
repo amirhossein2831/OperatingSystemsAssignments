@@ -1,0 +1,1 @@
+cmd_/home/mem/Os/param_module/module_with_param.ko := ld -r -m elf_x86_64 -z max-page-size=0x200000 -z noexecstack  -T ./scripts/module-common.lds --build-id  -o /home/mem/Os/param_module/module_with_param.ko /home/mem/Os/param_module/module_with_param.o /home/mem/Os/param_module/module_with_param.mod.o ;  true
