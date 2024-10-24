@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.28"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "WarehouseManagement",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "WarehouseManagement::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-WarehouseManagement-Debug-fc93df22b5f5d2f2ad2e.json",
+					"name" : "WarehouseManagement",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/amir/Desktop/CPP/\u202c\u202c\u202b\u202aWarehouse\u202c\u202c\u202aManagement/cmake-build-debug",
+		"source" : "/home/amir/Desktop/CPP/\u202c\u202c\u202b\u202aWarehouse\u202c\u202c\u202aManagement"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

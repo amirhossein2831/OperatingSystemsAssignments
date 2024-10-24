@@ -1,0 +1,7 @@
+/app/extra/clion/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/app/extra/clion/bin/ninja/linux/x64/ninja -G Ninja -S /home/amir/Desktop/CPP/‬‬‫‪Warehouse‬‬‪Management -B /home/amir/Desktop/CPP/‬‬‫‪Warehouse‬‬‪Management/cmake-build-debug
+-- Found PkgConfig: /usr/bin/pkg-config (found version "2.3.0") 
+-- Checking for module 'glib-2.0'
+--   Found glib-2.0, version 2.76.6
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/amir/Desktop/CPP/‬‬‫‪Warehouse‬‬‪Management/cmake-build-debug
