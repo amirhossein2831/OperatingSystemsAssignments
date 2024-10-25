@@ -14,7 +14,7 @@ ls -l
 #groups <username > or id -nG <username>
 groups amir
 
-chown root:sudo test # give the file with user: root and gorup: test
+sudo chown root:test test # give the file with user: root and gorup: test
 
 # 3
 #‫‪ chmod‬‬ 4664 file.txt
