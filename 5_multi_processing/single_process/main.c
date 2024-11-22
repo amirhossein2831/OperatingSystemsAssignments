@@ -2,9 +2,11 @@
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
+#include <sys/time.h>
+
 
 #define HIST_SIZE 25
-#define ITERATION_NUMBER 5000
+#define ITERATION_NUMBER 50000
 
 void printArray(int *hist) {
     printf("[");
@@ -28,12 +30,13 @@ void printHistogram(int* hist) {
 }
 
 int main(void) {
-    // initial arr
+    // initial 
+    struct timeval start, end;
     int hist[HIST_SIZE] = {0};
 
     // main logic
     srand(time(NULL));
-    clock_t start = clock();
+    gettimeofday(&start, NULL);
 
     for (int i = 0; i < ITERATION_NUMBER; i++) {
         int count = 0;
@@ -47,11 +50,11 @@ int main(void) {
         hist[count + 12]++;
     }
 
-    clock_t end = clock();
+    gettimeofday(&end, NULL);
 
     // print duration
-    double duration = (double)(end - start) / CLOCKS_PER_SEC;
-    printf("Operation Number: %d |Execution Time: %.6f ms \n",ITERATION_NUMBER, duration * 1000);
+    double duration = (end.tv_sec - start.tv_sec) * 1000.0 + (end.tv_usec - start.tv_usec) / 1000.0;
+    printf("Operation Number: %d| Execution Time: %.6f ms \n", ITERATION_NUMBER, duration);
 
     // print hist arr
     printArray(hist);

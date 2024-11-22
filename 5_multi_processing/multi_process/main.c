@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/time.h>
 #include <time.h>
 #include <unistd.h>
 #include <sys/ipc.h>
@@ -8,7 +9,8 @@
 #include <stdatomic.h>
 
 #define HIST_SIZE 25
-#define NUM_PROCESSES 5
+#define NUM_PROCESSES 10
+#define ITERATION_NUMBER 5000
 
 void printArray(int *hist) {
     printf("[");
@@ -16,7 +18,6 @@ void printArray(int *hist) {
         printf(" %d:%d ", i -12, hist[i]);
         if (i  != 24)
             printf(",");
-
     }
     printf("]\n");
 }
@@ -48,6 +49,7 @@ void performTask(_Atomic int* shared_hist, int iterations) {
 
 int main(void) {
     // create shared memory ,make it atomic, and initialize to 0
+    struct timeval start, end;
     int shm_id = shmget(IPC_PRIVATE, HIST_SIZE * sizeof(_Atomic int), IPC_CREAT | 0666);
     if (shm_id < 0) {
         perror("shmget failed");
@@ -66,7 +68,7 @@ int main(void) {
 
     // start main process
     srand(time(NULL));
-    clock_t start = clock();
+    gettimeofday(&start, NULL);
 
     for (int process_id = 0; process_id < NUM_PROCESSES; process_id++) {
         pid_t pid = fork();
@@ -75,7 +77,7 @@ int main(void) {
             perror("Fork failed");
             exit(EXIT_FAILURE);
         } else if (pid == 0) {
-            performTask(shared_hist, 100000);
+            performTask(shared_hist, ITERATION_NUMBER / NUM_PROCESSES);
             exit(EXIT_SUCCESS);
         }
     }
@@ -85,11 +87,11 @@ int main(void) {
         wait(NULL);
     }
 
-    clock_t end = clock();
+    gettimeofday(&end, NULL);
 
     // print duration
-    double duration = (double)(end - start) / CLOCKS_PER_SEC;
-    printf("Execution Time: %.6f ms\n", duration * 1000);
+    double duration = (end.tv_sec - start.tv_sec) * 1000.0 + (end.tv_usec - start.tv_usec) / 1000.0;
+    printf("Operation Number: %d | Process Number: %d | Execution Time: %.6f ms \n", ITERATION_NUMBER, NUM_PROCESSES, duration);
 
     // print hist arr
     for (int i = 0; i < 25; ++i) {
