@@ -94,10 +94,7 @@ int main(void) {
     printf("Operation Number: %d | Process Number: %d | Execution Time: %.6f ms \n", ITERATION_NUMBER, NUM_PROCESSES, duration);
 
     // print hist arr
-    for (int i = 0; i < 25; ++i) {
-        printf("%d ", shared_hist[i]);
-    }
-    printf("\n");
+    printArray((int*)shared_hist);
 
     // print histogram
     printHistogram((int*)shared_hist);
